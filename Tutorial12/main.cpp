@@ -51,7 +51,8 @@ bool renderCB(){
 }
 
 int main(void){
-    if(!loadIndexedModel("res/B.obj", model)) {
+    if(!loadIndexedModel("res/sd.obj", model)) {
+    //if(!loadIndexedModel("res/B.obj", model)) {
         std::cout << "Failed to load model";
         return -1;
     }

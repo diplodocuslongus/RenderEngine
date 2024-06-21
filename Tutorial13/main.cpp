@@ -55,7 +55,8 @@ bool renderCB(){
 }
 
 int main(void){
-    if(!loadIndexedModel("res/stand.obj", model)) {
+    if(!loadIndexedModel("res/text.obj", model)) {
+    //if(!loadIndexedModel("res/stand.obj", model)) {
         std::cout << "Failed to load model";
         return -1;
     }
@@ -73,9 +74,12 @@ int main(void){
     cbreak();
     curs_set(0);
 
-    renderContext = new RenderContext(WW, WH);
+    //renderContext = new RenderContext(100, 50);
+    renderContext = new RenderContext(WW, WH); // original
     cam = new Camera();
-    cam->createProjection(1.13, (WW / (float)2.0) / (WH), .2f, 400);
+    cam->createProjection(1.2, (WW / (float)2.0) / (WH), .2f, 400);
+    //cam->createProjection(1.8, (WW / (float)2.0) / (WH), .2f, 400);
+    //cam->createProjection(1.13, (WW / (float)2.0) / (WH), .2f, 400);
 
     renderContext->getRasterizer()->setRenderCB(renderCB);
 
